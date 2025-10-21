@@ -16,8 +16,8 @@ public class Test {
         ql.themSach(s2);
         ql.themSach(s3);
 
-        
-        ql.hienThiDanhSach();
+        System.out.println("--- Danh sach hien tai ---");
+        ql.hienThiDanhSachsach();
 
         // Tìm kiếm
         System.out.println(" tim sach co ma TT01");
@@ -27,13 +27,27 @@ public class Test {
         ql.capNhatSach("TT02", new SachTieuThuyet("TT02", "Tuo tre dang gia bao nhieu", "Rosie Nguyen", 2018, 180, "Tam ly", false,5000));
 
         System.out.println(" danh sach sau khi cap nhap");
-        ql.hienThiDanhSach();
+        ql.hienThiDanhSachsach();
 
         // Xóa
         ql.xoaSach("GT01");
 
         System.out.println("danh sach sau khi xoa");
-        ql.hienThiDanhSach();
+        ql.hienThiDanhSachsach();
+        
+        System.out.println("--- Kiem tra interface ---");
+        
+        IkiemKe kiemKeGiaoTrinh = (IkiemKe) s1;
+        int soLuongCan = 100;
+        boolean duTonKho = kiemKeGiaoTrinh.kiemTraTonKho(soLuongCan);
+        System.out.print("Kiem tra ton kho sach Giao Trinh (So luong >=" + soLuongCan + "): ");
+        System.out.println(duTonKho ? "Đu ton kho." : " Khong đu ton kho."); 
+        kiemKeGiaoTrinh.capNhatViTri("Kho A1-Ke 5");
+        
+        IkiemKe kiemKeTieuThuyet =(IkiemKe) s2; 
+        System.out.print("Kiem tra ton kho sach Tieu Thuyet (So luong >=" + soLuongCan + "): ");
+        System.out.println(kiemKeTieuThuyet.kiemTraTonKho(soLuongCan) ? " du ton kho." : "Khong đu ton kho.");
+        kiemKeTieuThuyet.capNhatViTri("Kho A3-Ke 10");
     }
     
     

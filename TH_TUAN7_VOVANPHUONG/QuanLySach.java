@@ -43,11 +43,12 @@ public class QuanLySach {
         return null;
     }
 
-    public void hienThiDanhSach() {
+    public void hienThiDanhSachsach() {
         if (danhsach.isEmpty()) {
             System.out.println("Danh sach trong");
         } else {
             for (Sach s : danhsach) {
+                System.out.println("===================================================");
                 System.out.println(s.toString());
             }
         }

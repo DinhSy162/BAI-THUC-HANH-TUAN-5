@@ -1,7 +1,7 @@
 
 package bt_tuan5;
 
-class SachTieuThuyet extends Sach {
+class SachTieuThuyet extends Sach implements IkiemKe {
     private String theLoai;
     private boolean lasachSerise;
     
@@ -11,14 +11,22 @@ class SachTieuThuyet extends Sach {
         this.theLoai = theLoai;
         this.lasachSerise = lasachSerise;          
     }
-    public double giaban(){
+    public double tinhgiaban(){
         return giacoban + (lasachSerise ? 15000 : 0);
     }
     
     @Override
     public String toString(){
-        return super.toString() +", the loai: " + theLoai + ", La sach series: " + (lasachSerise ? " co " : " khong ")+ ",giaban " +giaban();
+        return super.toString() +", the loai: " + theLoai + ", La sach series: " + (lasachSerise ? " co " : " khong ")+ ",giaban " +tinhgiaban();
         
+    }
+    @Override
+    public boolean kiemTraTonKho(int soLuongToiThieu){
+        return getSoluong() >= soLuongToiThieu;
+    }
+    @Override
+    public void capNhatViTri(String viTriMoi){ 
+        System.out.println("Da chuyen sach [" + getTieuDe() + "] den khu vuc: [" + viTriMoi + "].");
     }
     
 }

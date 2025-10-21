@@ -8,7 +8,7 @@ public abstract class Sach {
     private String tacGia;
     private int namXuatBan;
     private int soluong;
-    
+    protected double giacoban;
     public Sach(){
         
     }
@@ -70,8 +70,8 @@ public abstract class Sach {
         return "Ma sach: " + maSach +", Tieu de: " + tieuDe +", Tac giai: " + tacGia +", Nam xuat ban: " + namXuatBan +", so luong: " + soluong;
     }
     // 15-10
-    protected double giacoban;
-    public abstract double giaban();
+ 
+    public abstract double tinhgiaban();
     public double getgiacoban(){
         return giacoban;
     }
